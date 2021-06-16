@@ -1,14 +1,13 @@
 import { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { createContext, ReactNode, useEffect } from 'react'
 import { CHOCO_COLOR, DARK_CHOCO_COLOR, TABLET_MIN_WIDTH } from 'src/models/constants'
-import { pageview } from 'src/utils/google-analytics'
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+
 import 'normalize.css'
 import 'antd/dist/antd.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 import 'animate.css/animate.min.css'
+
 import { ToastContainer, cssTransition } from 'react-toastify'
 
 export const fade = cssTransition({
@@ -17,10 +16,9 @@ export const fade = cssTransition({
 })
 
 const GlobalStyle = createGlobalStyle`
-  html {
-    @media (max-width: ${TABLET_MIN_WIDTH}) {
-      font-size: 14px;
-    }
+  html, 
+  body {
+    font-size: 16px;
   }
 
   body {
@@ -58,19 +56,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function EmailBlockchainApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-
-  // Google Analytics로 정보 보내기
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      const handleRouteChange = (url: string) => pageview(url)
-      router.events.on('routeChangeComplete', handleRouteChange)
-      return () => {
-        router.events.off('routeChangeComplete', handleRouteChange)
-      }
-    }
-  }, [router.events])
-
   return (
     <>
       <Head>
