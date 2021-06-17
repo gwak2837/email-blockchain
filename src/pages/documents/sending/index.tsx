@@ -1,14 +1,9 @@
-import React from 'react'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
 import { Collapse } from 'antd'
 
 const { Panel } = Collapse
-
-const PaddingH2 = styled.h2`
-  padding: 0.5rem;
-`
 
 const PaddingH4 = styled.h4`
   padding: 0.5rem;
