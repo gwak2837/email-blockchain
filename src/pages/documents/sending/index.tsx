@@ -1,6 +1,10 @@
+import React from 'react'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
+import { Collapse } from 'antd'
+
+const { Panel } = Collapse
 
 const PaddingH2 = styled.h2`
   padding: 0.5rem;
@@ -10,14 +14,9 @@ const PaddingH4 = styled.h4`
   padding: 0.5rem;
 `
 
-type Props = {
-  number: number
-}
-
-function Transaction({ number }: Props) {
+function Transaction() {
   return (
     <>
-      <PaddingH2>Transaction {number}</PaddingH2>
       <table>
         <tr>
           <td>
@@ -94,28 +93,37 @@ function DocumentsSendingPage() {
   return (
     <PageHead title="이메일 블록체인 - FTP 문서 발신" description={description}>
       <NavigationLayout>
-        <PaddingH2>필수 입력 항목</PaddingH2>
-        <table>
-          <tr>
-            <td>
-              <PaddingH4>Receiver</PaddingH4>
-            </td>
-            <td>
-              <input />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <PaddingH4>FTP Title</PaddingH4>
-            </td>
-            <td>
-              <input />
-            </td>
-          </tr>
-        </table>
-        <Transaction number={1} />
-        <Transaction number={2} />
-        <Transaction number={3} />
+        <Collapse defaultActiveKey={['0']}>
+          <Panel header="필수 입력 항목" key="0">
+            <table>
+              <tr>
+                <td>
+                  <PaddingH4>Receiver</PaddingH4>
+                </td>
+                <td>
+                  <input />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <PaddingH4>FTP Title</PaddingH4>
+                </td>
+                <td>
+                  <input />
+                </td>
+              </tr>
+            </table>
+          </Panel>
+          <Panel header="Transaction 1" key="1">
+            <Transaction />
+          </Panel>
+          <Panel header="Transaction 2" key="2">
+            <Transaction />
+          </Panel>
+          <Panel header="Transaction 3" key="3">
+            <Transaction />
+          </Panel>
+        </Collapse>
       </NavigationLayout>
     </PageHead>
   )
