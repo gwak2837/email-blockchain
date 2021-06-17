@@ -45,8 +45,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${DARK_CHOCO_COLOR};
+    color: #3c8fc9;
     text-decoration: none;
+    font-weight: 500;
     transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
     :hover {
