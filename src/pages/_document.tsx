@@ -1,9 +1,8 @@
 /* eslint-disable react/no-danger */
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
-import { GOOGLE_ANALYTICS_TRACKING_ID } from 'src/utils/google-analytics'
 import { ServerStyleSheet } from 'styled-components'
 
-export const canonicalUrl = 'https://email-blockchain.vercel.app/'
+export const canonicalUrl = 'https://email-blockchain.vercel.app'
 
 // 최대 10개
 const keywords = '이메일,블록체인,이메일블록체인'

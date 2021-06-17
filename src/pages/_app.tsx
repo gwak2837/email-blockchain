@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { CHOCO_COLOR, DARK_CHOCO_COLOR, TABLET_MIN_WIDTH } from 'src/models/constants'
+import { CHOCO_COLOR, DARK_CHOCO_COLOR } from 'src/models/constants'
 import { createGlobalStyle } from 'styled-components'
 
 import 'normalize.css'

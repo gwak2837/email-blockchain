@@ -24,7 +24,7 @@ function PageHead({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="/favicon.ico" />
-        <meta property="og:url" content={`${canonicalUrl}${pathname.slice(1)}`} />
+        <meta property="og:url" content={`${canonicalUrl}${pathname}`} />
         <meta property="og:site_name" content="이메일 블록체인" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
