@@ -1,4 +1,5 @@
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
+import { PaddingCenterTd, VerticalScroll, Table, PaddingCenterTh } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
@@ -8,10 +9,53 @@ const FlexContainer = styled.div`
   align-items: center;
 `
 
-const PaddingCenterTd = styled.td`
-  text-align: center;
-  padding: 0.5rem;
+const StyledTable = styled(Table)`
+  margin: 1rem;
+  border: 2px solid #eee;
 `
+
+const StyledPaddingCenterTh = styled(PaddingCenterTh)`
+  border: 2px solid #eee;
+`
+
+const StyledPaddingCenterTd = styled(PaddingCenterTd)`
+  border: 2px solid #eee;
+`
+
+const documentTableRecord = {
+  eventTime: new Date(),
+  blockId: '1',
+  transactionId: '1',
+  sender: '홍길동',
+  receiver: 'XX건설',
+  title: '누락 및 간섭',
+}
+
+type Props = {
+  document: {
+    eventTime: Date
+    transactionId: string
+    blockId: string
+    sender: string
+    receiver: string
+    title: string
+  }
+}
+
+function DocumentTableRecord({ document }: Props) {
+  return (
+    <tr>
+      <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>
+        <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
+      </StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.transactionId}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.title}</StyledPaddingCenterTd>
+    </tr>
+  )
+}
 
 const description = '문서관리대장'
 
@@ -24,70 +68,33 @@ function DocumentsPage() {
           <input placeholder="Search" />
           <div>Page 1 / 50</div>
         </FlexContainer>
-        <table>
-          <thead>
-            <tr>
-              <PaddingCenterTd>Event Time</PaddingCenterTd>
-              <PaddingCenterTd># of Transactions</PaddingCenterTd>
-              <PaddingCenterTd># of Blocks</PaddingCenterTd>
-              <PaddingCenterTd>Sender</PaddingCenterTd>
-              <PaddingCenterTd>Receiver</PaddingCenterTd>
-              <PaddingCenterTd>FTP Title</PaddingCenterTd>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <PaddingCenterTd>{new Date().toISOString()}</PaddingCenterTd>
-              <PaddingCenterTd>
-                <ClientSideLink href="/blocks/1">0001</ClientSideLink>
-              </PaddingCenterTd>
-              <PaddingCenterTd>0001</PaddingCenterTd>
-              <PaddingCenterTd>홍길동</PaddingCenterTd>
-              <PaddingCenterTd>건설</PaddingCenterTd>
-              <PaddingCenterTd>누락 및 간섭</PaddingCenterTd>
-            </tr>
-            <tr>
-              <PaddingCenterTd>{new Date().toISOString()}</PaddingCenterTd>
-              <PaddingCenterTd>
-                <ClientSideLink href="/blocks/1">0001</ClientSideLink>
-              </PaddingCenterTd>
-              <PaddingCenterTd>0001</PaddingCenterTd>
-              <PaddingCenterTd>홍길동</PaddingCenterTd>
-              <PaddingCenterTd>건설</PaddingCenterTd>
-              <PaddingCenterTd>누락 및 간섭</PaddingCenterTd>
-            </tr>
-            <tr>
-              <PaddingCenterTd>{new Date().toISOString()}</PaddingCenterTd>
-              <PaddingCenterTd>
-                <ClientSideLink href="/blocks/1">0001</ClientSideLink>
-              </PaddingCenterTd>
-              <PaddingCenterTd>0001</PaddingCenterTd>
-              <PaddingCenterTd>홍길동</PaddingCenterTd>
-              <PaddingCenterTd>건설</PaddingCenterTd>
-              <PaddingCenterTd>누락 및 간섭</PaddingCenterTd>
-            </tr>
-            <tr>
-              <PaddingCenterTd>{new Date().toISOString()}</PaddingCenterTd>
-              <PaddingCenterTd>
-                <ClientSideLink href="/blocks/1">0001</ClientSideLink>
-              </PaddingCenterTd>
-              <PaddingCenterTd>0001</PaddingCenterTd>
-              <PaddingCenterTd>홍길동</PaddingCenterTd>
-              <PaddingCenterTd>건설</PaddingCenterTd>
-              <PaddingCenterTd>누락 및 간섭</PaddingCenterTd>
-            </tr>
-            <tr>
-              <PaddingCenterTd>{new Date().toISOString()}</PaddingCenterTd>
-              <PaddingCenterTd>
-                <ClientSideLink href="/blocks/1">0001</ClientSideLink>
-              </PaddingCenterTd>
-              <PaddingCenterTd>0001</PaddingCenterTd>
-              <PaddingCenterTd>홍길동</PaddingCenterTd>
-              <PaddingCenterTd>건설</PaddingCenterTd>
-              <PaddingCenterTd>누락 및 간섭</PaddingCenterTd>
-            </tr>
-          </tbody>
-        </table>
+        <VerticalScroll>
+          <StyledTable>
+            <thead>
+              <tr>
+                <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh># of Blocks</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>FTP Title</StyledPaddingCenterTh>
+              </tr>
+            </thead>
+            <tbody>
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+            </tbody>
+          </StyledTable>
+        </VerticalScroll>
       </NavigationLayout>
     </PageHead>
   )

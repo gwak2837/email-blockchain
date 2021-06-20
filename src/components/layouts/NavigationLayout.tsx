@@ -1,8 +1,10 @@
+import { DownOutlined } from '@ant-design/icons'
 import { ReactNode, memo } from 'react'
 import styled from 'styled-components'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
 import { FlexContainerAlignCenter } from 'src/styles/FlexContainer'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const NAVIGATION_WIDTH = '11rem'
 
@@ -122,6 +124,10 @@ const StyledHeader = styled.header`
 `
 
 const RightAlign = styled.div`
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-items: center;
+  gap: 1rem;
   text-align: right;
   padding: 1rem;
 `
@@ -137,7 +143,13 @@ function NavigationLayout({ children }: Props) {
       <NavigationPadding />
       <GridContainerRow>
         <StyledHeader>
-          <RightAlign>홍길동</RightAlign>
+          <RightAlign>
+            <div>
+              홍길동
+              <DownOutlined />
+            </div>
+            <Image src="/user-image.svg" alt="/user-image.svg" width="32" height="32" />
+          </RightAlign>
         </StyledHeader>
         <main>{children}</main>
       </GridContainerRow>
