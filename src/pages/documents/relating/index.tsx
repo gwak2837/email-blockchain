@@ -1,12 +1,157 @@
+import { Button, Input, Select } from 'antd'
+import { useState } from 'react'
+import ClientSideLink from 'src/components/atoms/ClientSideLink'
+import { Table, PaddingCenterTh, PaddingCenterTd, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
+import styled from 'styled-components'
+
+const { Option } = Select
+
+const StyledFlexContainerAlignCenter = styled.div`
+  display: grid;
+  grid-template-columns: 5rem 1fr 5rem;
+  align-items: center;
+  gap: 1rem;
+
+  background: #e6eaed;
+  border: 2px solid #dcdde6;
+  padding: 1rem;
+`
+
+const searchSelectStyle = {
+  minWidth: '10rem',
+}
+
+const searchInputStyle = {
+  width: '50%',
+  minWidth: '20rem',
+}
+
+const StyledTable = styled(Table)`
+  margin: 1rem;
+  border: 2px solid #eee;
+`
+
+const StyledPaddingCenterTh = styled(PaddingCenterTh)`
+  border: 2px solid #eee;
+`
+
+const StyledPaddingCenterTd = styled(PaddingCenterTd)`
+  border: 2px solid #eee;
+`
+
+const documentTableRecord = {
+  eventTime: new Date(),
+  blockId: '1',
+  transactionId: '1',
+  sender: '홍길동',
+  receiver: 'XX건설',
+  title: '누락 및 간섭',
+}
+
+type Props = {
+  document: {
+    eventTime: Date
+    transactionId: string
+    blockId: string
+    sender: string
+    receiver: string
+    title: string
+  }
+}
+
+function DocumentTableRecord({ document }: Props) {
+  return (
+    <tr>
+      <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>
+        <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
+      </StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.transactionId}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.title}</StyledPaddingCenterTd>
+    </tr>
+  )
+}
 
 const description = ''
 
 function DocumentsRelatingPage() {
+  const [inputCount, setInputCount] = useState(0)
+
   return (
     <PageHead title="이메일 블록체인 - 연관문서 조회" description={description}>
-      <NavigationLayout>연관문서 조회</NavigationLayout>
+      <NavigationLayout>
+        <StyledFlexContainerAlignCenter>
+          <h2>Step 1</h2>
+          <Input.Group compact>
+            <Select defaultValue="Tx ID" size="large" style={searchSelectStyle}>
+              <Option value="Tx ID">Tx ID</Option>
+              <Option value="Block ID">Block ID</Option>
+            </Select>
+            <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
+          </Input.Group>
+        </StyledFlexContainerAlignCenter>
+        <StyledFlexContainerAlignCenter>
+          <h2>Step 2</h2>
+          <Input.Group compact>
+            <Select defaultValue="Keyword" size="large" style={searchSelectStyle}>
+              <Option value="Keyword">Keyword</Option>
+              <Option value="Tx ID">Tx ID</Option>
+              <Option value="Block ID">Block ID</Option>
+            </Select>
+            <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
+          </Input.Group>
+          <Button onClick={() => setInputCount((prev) => prev + 1)} type="primary" size="large">
+            + Add
+          </Button>
+          {[...Array(inputCount)].map(() => (
+            <>
+              <div />
+              <Input.Group compact>
+                <Select defaultValue="Keyword" size="large" style={searchSelectStyle}>
+                  <Option value="Keyword">Keyword</Option>
+                  <Option value="Tx ID">Tx ID</Option>
+                  <Option value="Block ID">Block ID</Option>
+                </Select>
+                <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
+              </Input.Group>
+              <div />
+            </>
+          ))}
+        </StyledFlexContainerAlignCenter>
+
+        <h2>연관문서 조회 결과</h2>
+        <VerticalScroll>
+          <StyledTable>
+            <thead>
+              <tr>
+                <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh># of Blocks</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>FTP Title</StyledPaddingCenterTh>
+              </tr>
+            </thead>
+            <tbody>
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+              <DocumentTableRecord document={documentTableRecord} />
+            </tbody>
+          </StyledTable>
+        </VerticalScroll>
+      </NavigationLayout>
     </PageHead>
   )
 }
