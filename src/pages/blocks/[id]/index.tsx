@@ -4,6 +4,7 @@ import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import { transaction } from 'src/models/dummy-data'
 
 const VerticalScroll50 = styled(VerticalScroll)`
   height: 50%;
@@ -85,7 +86,7 @@ function BlockPage() {
         </VerticalScroll50>
 
         <h2>트랜잭션 상세</h2>
-        <Transaction transaction />
+        <Transaction transaction={transaction} />
       </NavigationLayout>
     </PageHead>
   )

@@ -30,7 +30,16 @@ const StyledPaddingLeftTd = styled(PaddingLeftTd)`
 `
 
 type Props = {
-  transaction: any
+  transaction: {
+    description: string
+    descriptionHash: string
+    code: string
+    keywords: string
+    id: string
+    previousTransactionId: string
+    version: string
+    previousVersion: string
+  }
 }
 
 function Transaction({ transaction }: Props) {
@@ -46,41 +55,39 @@ function Transaction({ transaction }: Props) {
         <tbody>
           <tr>
             <StyledPaddingRightTd>첨부파일 설명</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>
-              FAN MOTOR의 GLAND PLATE에 CABLE 인입용 HOLE이 없어 HOLE 이 없어 HOLE 가공을 요청
-            </StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.description}</StyledPaddingLeftTd>
           </tr>
           <tr>
-            <StyledPaddingRightTd>첨부파일 원문</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>
-              afc9edc666c3dbc49cd26b4cefcb2b874b163357eb36ff85cff7455fe068cef2
-            </StyledPaddingLeftTd>
+            <StyledPaddingRightTd>첨부파일 해시</StyledPaddingRightTd>
+            <StyledPaddingLeftTd>{transaction.descriptionHash}</StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>문서분류코드</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>GN-CV02</StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.code}</StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>연관 키워드</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>가공, 인입용 HOLE, FAN MOTOR</StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.keywords}</StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>트랜잭션 ID</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>1</StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.id}</StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>이전 트랜잭션 ID</StyledPaddingRightTd>
             <StyledPaddingLeftTd>
-              <ClientSideLink href={`/transactions/${15}`}>15</ClientSideLink>
+              <ClientSideLink href={`/transactions/${transaction.previousTransactionId}`}>
+                {transaction.previousTransactionId}
+              </ClientSideLink>
             </StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>첨부파일 버전</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>CCSRev.1.0</StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.version}</StyledPaddingLeftTd>
           </tr>
           <tr>
             <StyledPaddingRightTd>이전 첨부파일 버전</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>CCSRev.0.2</StyledPaddingLeftTd>
+            <StyledPaddingLeftTd>{transaction.previousVersion}</StyledPaddingLeftTd>
           </tr>
         </tbody>
       </StyledTable>

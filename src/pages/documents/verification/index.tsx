@@ -5,6 +5,7 @@ import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
 import styled from 'styled-components'
+import { transaction } from 'src/models/dummy-data'
 
 const { Option } = Select
 
@@ -84,7 +85,7 @@ function DocumentVerificationPage() {
         </Modal>
 
         <h2>문서 변경이력 조회 결과</h2>
-        <Transaction transaction />
+        <Transaction transaction={transaction} />
       </NavigationLayout>
     </PageHead>
   )
