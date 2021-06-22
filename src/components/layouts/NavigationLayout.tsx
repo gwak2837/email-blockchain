@@ -95,8 +95,8 @@ function Navigation() {
             <PaddingCenterH4>연관문서 조회</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
-        <ClientSideLink href="/documents/prove">
-          <FlexContainerColumnCenterCenter selected={asPath === '/documents/prove'}>
+        <ClientSideLink href="/documents/verification">
+          <FlexContainerColumnCenterCenter selected={asPath === '/documents/verification'}>
             <PaddingCenterH4>진위검증</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
@@ -119,7 +119,7 @@ const GridContainerRow = styled.div`
 
 const StyledHeader = styled.header`
   width: 100%;
-  background: #21579a;
+  background: #2377ba;
   color: #eee;
 `
 
