@@ -8,9 +8,9 @@ import styled from 'styled-components'
 
 const { Option } = Select
 
-const StyledFlexContainerAlignCenter = styled.div`
+const GridContainerAlignCenter = styled.div`
   display: grid;
-  grid-template-columns: 5rem 1fr 5rem;
+  grid-template-columns: 5rem 1fr auto;
   align-items: center;
   gap: 1rem;
 
@@ -43,21 +43,21 @@ const StyledPaddingCenterTd = styled(PaddingCenterTd)`
 
 const documentTableRecord = {
   eventTime: new Date(),
-  blockId: '1',
   transactionId: '1',
   sender: '홍길동',
   receiver: 'XX건설',
-  title: '누락 및 간섭',
+  description: '누락 및 간섭',
+  keywords: '공기지연, 배관 마감 작업',
 }
 
 type Props = {
   document: {
     eventTime: Date
     transactionId: string
-    blockId: string
     sender: string
     receiver: string
-    title: string
+    description: string
+    keywords: string
   }
 }
 
@@ -66,25 +66,27 @@ function DocumentTableRecord({ document }: Props) {
     <tr>
       <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
       <StyledPaddingCenterTd>
-        <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
+        <ClientSideLink href={`/transactions/${document.transactionId}`}>
+          {document.transactionId}
+        </ClientSideLink>
       </StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.transactionId}</StyledPaddingCenterTd>
       <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
       <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.title}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.description}</StyledPaddingCenterTd>
+      <StyledPaddingCenterTd>{document.keywords}</StyledPaddingCenterTd>
     </tr>
   )
 }
 
 const description = ''
 
-function DocumentsRelatingPage() {
+function RelatingDocumentsPage() {
   const [inputCount, setInputCount] = useState(0)
 
   return (
     <PageHead title="이메일 블록체인 - 연관문서 조회" description={description}>
       <NavigationLayout>
-        <StyledFlexContainerAlignCenter>
+        <GridContainerAlignCenter>
           <h2>Step 1</h2>
           <Input.Group compact>
             <Select defaultValue="Tx ID" size="large" style={searchSelectStyle}>
@@ -93,8 +95,8 @@ function DocumentsRelatingPage() {
             </Select>
             <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
           </Input.Group>
-        </StyledFlexContainerAlignCenter>
-        <StyledFlexContainerAlignCenter>
+        </GridContainerAlignCenter>
+        <GridContainerAlignCenter>
           <h2>Step 2</h2>
           <Input.Group compact>
             <Select defaultValue="Keyword" size="large" style={searchSelectStyle}>
@@ -121,7 +123,7 @@ function DocumentsRelatingPage() {
               <div />
             </>
           ))}
-        </StyledFlexContainerAlignCenter>
+        </GridContainerAlignCenter>
 
         <h2>연관문서 조회 결과</h2>
         <VerticalScroll>
@@ -129,11 +131,11 @@ function DocumentsRelatingPage() {
             <thead>
               <tr>
                 <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Blocks</StyledPaddingCenterTh>
                 <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
                 <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
                 <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>FTP Title</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Description</StyledPaddingCenterTh>
+                <StyledPaddingCenterTh>Keyword</StyledPaddingCenterTh>
               </tr>
             </thead>
             <tbody>
@@ -156,4 +158,4 @@ function DocumentsRelatingPage() {
   )
 }
 
-export default DocumentsRelatingPage
+export default RelatingDocumentsPage
