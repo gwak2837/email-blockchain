@@ -1,16 +1,12 @@
 import { PaddingLeftTd, PaddingRightTd, Table, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
+import Transaction from 'src/components/Transaction'
 import styled from 'styled-components'
-import ClientSideLink from 'src/components/atoms/ClientSideLink'
 import { useRouter } from 'next/router'
 
 const VerticalScroll50 = styled(VerticalScroll)`
   height: 50%;
-`
-
-const VerticalScroll60 = styled(VerticalScroll)`
-  height: 60%;
 `
 
 const StyledTable = styled(Table)`
@@ -89,56 +85,7 @@ function BlockPage() {
         </VerticalScroll50>
 
         <h2>트랜잭션 상세</h2>
-        <VerticalScroll60>
-          <StyledTable>
-            <thead>
-              <tr>
-                <th />
-                <th />
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <StyledPaddingRightTd>첨부파일 설명</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>
-                  FAN MOTOR의 GLAND PLATE에 CABLE 인입용 HOLE이 없어 HOLE 이 없어 HOLE 가공을 요청
-                </StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>첨부파일 원문</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>
-                  afc9edc666c3dbc49cd26b4cefcb2b874b163357eb36ff85cff7455fe068cef2
-                </StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>문서분류코드</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>GN-CV02</StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>연관 키워드</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>가공, 인입용 HOLE, FAN MOTOR</StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>트랜잭션 ID</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>16</StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>이전 트랜잭션 ID</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>
-                  <ClientSideLink href={`/blocks/${15}`}>15</ClientSideLink>
-                </StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>첨부파일 버전</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>CCSRev.1.0</StyledPaddingLeftTd>
-              </tr>
-              <tr>
-                <StyledPaddingRightTd>이전 첨부파일 버전</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>CCSRev.0.2</StyledPaddingLeftTd>
-              </tr>
-            </tbody>
-          </StyledTable>
-        </VerticalScroll60>
+        <Transaction transaction />
       </NavigationLayout>
     </PageHead>
   )
