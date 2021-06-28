@@ -86,7 +86,7 @@ const description = ''
 
 function DocumentsSendingPage() {
   return (
-    <PageHead title="이메일 블록체인 - FTP 문서 발신" description={description}>
+    <PageHead title="이메일 블록체인 - Email 문서 발신" description={description}>
       <NavigationLayout>
         <Collapse defaultActiveKey={['0']}>
           <Panel header="필수 입력 항목" key="0">
@@ -101,7 +101,7 @@ function DocumentsSendingPage() {
               </tr>
               <tr>
                 <td>
-                  <PaddingH4>FTP Title</PaddingH4>
+                  <PaddingH4>Email Title</PaddingH4>
                 </td>
                 <td>
                   <input />

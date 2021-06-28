@@ -42,12 +42,7 @@ function BlockPage() {
         <h2>블록 상세</h2>
         <VerticalScroll50>
           <StyledTable>
-            <thead>
-              <tr>
-                <th />
-                <th />
-              </tr>
-            </thead>
+            <thead />
             <tbody>
               <tr>
                 <StyledPaddingRightTd>Block Number</StyledPaddingRightTd>
@@ -70,7 +65,7 @@ function BlockPage() {
                 <StyledPaddingLeftTd>{new Date().toISOString()}</StyledPaddingLeftTd>
               </tr>
               <tr>
-                <StyledPaddingRightTd>FTP Title</StyledPaddingRightTd>
+                <StyledPaddingRightTd>Email Title</StyledPaddingRightTd>
                 <StyledPaddingLeftTd>ACC FAN MOTOR CABLE ENTRY</StyledPaddingLeftTd>
               </tr>
               <tr>
