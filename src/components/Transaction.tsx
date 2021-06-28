@@ -7,8 +7,6 @@ const VerticalScroll60 = styled(VerticalScroll)`
 `
 
 const StyledTable = styled(Table)`
-  padding: 1rem;
-
   tbody > tr:nth-child(1) > td {
     border-top: 2px solid #094e97;
   }
@@ -46,12 +44,7 @@ function Transaction({ transaction }: Props) {
   return (
     <VerticalScroll60>
       <StyledTable>
-        <thead>
-          <tr>
-            <th />
-            <th />
-          </tr>
-        </thead>
+        <thead />
         <tbody>
           <tr>
             <StyledPaddingRightTd>첨부파일 설명</StyledPaddingRightTd>
