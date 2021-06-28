@@ -1,5 +1,5 @@
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
-import { PaddingCenterTd, VerticalScroll, Table, PaddingCenterTh } from 'src/components/atoms/Table'
+import { VerticalScroll, Table } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
@@ -7,19 +7,6 @@ import styled from 'styled-components'
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
-`
-
-const StyledTable = styled(Table)`
-  margin: 1rem;
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTh = styled(PaddingCenterTh)`
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTd = styled(PaddingCenterTd)`
-  border: 2px solid #eee;
 `
 
 const documentTableRecord = {
@@ -45,14 +32,14 @@ type Props = {
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>
+      <td>{document.eventTime.toISOString()}</td>
+      <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
-      </StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.transactionId}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.title}</StyledPaddingCenterTd>
+      </td>
+      <td>{document.transactionId}</td>
+      <td>{document.sender}</td>
+      <td>{document.receiver}</td>
+      <td>{document.title}</td>
     </tr>
   )
 }
@@ -69,15 +56,15 @@ function DocumentsPage() {
           <div>Page 1 / 50</div>
         </FlexContainer>
         <VerticalScroll>
-          <StyledTable>
+          <Table>
             <thead>
               <tr>
-                <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Blocks</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>FTP Title</StyledPaddingCenterTh>
+                <th>Event Time</th>
+                <th># of Blocks</th>
+                <th># of Transactions</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Email Title</th>
               </tr>
             </thead>
             <tbody>
@@ -93,7 +80,7 @@ function DocumentsPage() {
               <DocumentTableRecord document={documentTableRecord} />
               <DocumentTableRecord document={documentTableRecord} />
             </tbody>
-          </StyledTable>
+          </Table>
         </VerticalScroll>
       </NavigationLayout>
     </PageHead>

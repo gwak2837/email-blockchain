@@ -1,6 +1,6 @@
 import { Input, Select } from 'antd'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
-import { Table, PaddingCenterTh, PaddingCenterTd, VerticalScroll } from 'src/components/atoms/Table'
+import { Table, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
@@ -26,19 +26,6 @@ const searchInputStyle = {
   width: '50%',
   minWidth: '20rem',
 }
-
-const StyledTable = styled(Table)`
-  margin: 1rem;
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTh = styled(PaddingCenterTh)`
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTd = styled(PaddingCenterTd)`
-  border: 2px solid #eee;
-`
 
 const documentTableRecords = [
   {
@@ -148,20 +135,20 @@ type Props = {
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.version}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.previousVersion}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>
+      <td>{document.eventTime.toISOString()}</td>
+      <td>{document.version}</td>
+      <td>{document.previousVersion}</td>
+      <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
-      </StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>
+      </td>
+      <td>
         <ClientSideLink href={`/transactions/${document.transactionId}`}>
           {document.transactionId}
         </ClientSideLink>
-      </StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.title}</StyledPaddingCenterTd>
+      </td>
+      <td>{document.sender}</td>
+      <td>{document.receiver}</td>
+      <td>{document.title}</td>
     </tr>
   )
 }
@@ -185,17 +172,17 @@ function DocumentsHistoryPage() {
 
         <h2>문서 변경이력 조회</h2>
         <VerticalScroll>
-          <StyledTable>
+          <Table>
             <thead>
               <tr>
-                <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Version</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Previous Version</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Blocks</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Title</StyledPaddingCenterTh>
+                <th>Event Time</th>
+                <th>Version</th>
+                <th>Previous Version</th>
+                <th># of Blocks</th>
+                <th># of Transactions</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Title</th>
               </tr>
             </thead>
             <tbody>
@@ -203,7 +190,7 @@ function DocumentsHistoryPage() {
                 <DocumentTableRecord key={document.id} document={document} />
               ))}
             </tbody>
-          </StyledTable>
+          </Table>
         </VerticalScroll>
       </NavigationLayout>
     </PageHead>

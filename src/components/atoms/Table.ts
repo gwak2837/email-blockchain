@@ -1,38 +1,31 @@
 import styled from 'styled-components'
 
-export const PaddingCenterTh = styled.th`
-  text-align: center;
-  padding: 0.5rem;
-`
-
-export const PaddingCenterTd = styled.td`
-  text-align: center;
-  padding: 0.5rem;
-`
-
 export const PaddingRightTd = styled.td`
   text-align: right;
-  padding: 0.5rem;
 `
 
 export const PaddingLeftTd = styled.td`
   text-align: left;
-  padding: 0.5rem;
 `
 
 export const VerticalScroll = styled.div`
   height: 100%;
+  margin: 1rem;
   overflow: auto;
   position: relative;
 `
 
-export const Table = styled.div`
+export const Table = styled.table`
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 
   th,
   td {
+    padding: 0.5rem;
+    text-align: center;
     white-space: nowrap;
+    border: 2px solid #eee;
   }
 `

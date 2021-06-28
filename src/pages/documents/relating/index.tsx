@@ -1,7 +1,7 @@
 import { Button, Input, Select } from 'antd'
 import { useState } from 'react'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
-import { Table, PaddingCenterTh, PaddingCenterTd, VerticalScroll } from 'src/components/atoms/Table'
+import { Table, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
@@ -28,19 +28,6 @@ const searchInputStyle = {
   minWidth: '20rem',
 }
 
-const StyledTable = styled(Table)`
-  margin: 1rem;
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTh = styled(PaddingCenterTh)`
-  border: 2px solid #eee;
-`
-
-const StyledPaddingCenterTd = styled(PaddingCenterTd)`
-  border: 2px solid #eee;
-`
-
 const documentTableRecord = {
   eventTime: new Date(),
   transactionId: '1',
@@ -64,16 +51,16 @@ type Props = {
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <StyledPaddingCenterTd>{document.eventTime.toISOString()}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>
+      <td>{document.eventTime.toISOString()}</td>
+      <td>
         <ClientSideLink href={`/transactions/${document.transactionId}`}>
           {document.transactionId}
         </ClientSideLink>
-      </StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.sender}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.receiver}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.description}</StyledPaddingCenterTd>
-      <StyledPaddingCenterTd>{document.keywords}</StyledPaddingCenterTd>
+      </td>
+      <td>{document.sender}</td>
+      <td>{document.receiver}</td>
+      <td>{document.description}</td>
+      <td>{document.keywords}</td>
     </tr>
   )
 }
@@ -127,15 +114,15 @@ function RelatingDocumentsPage() {
 
         <h2>연관문서 조회 결과</h2>
         <VerticalScroll>
-          <StyledTable>
+          <Table>
             <thead>
               <tr>
-                <StyledPaddingCenterTh>Event Time</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh># of Transactions</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Sender</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Receiver</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Description</StyledPaddingCenterTh>
-                <StyledPaddingCenterTh>Keyword</StyledPaddingCenterTh>
+                <th>Event Time</th>
+                <th># of Transactions</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Description</th>
+                <th>Keyword</th>
               </tr>
             </thead>
             <tbody>
@@ -151,7 +138,7 @@ function RelatingDocumentsPage() {
               <DocumentTableRecord document={documentTableRecord} />
               <DocumentTableRecord document={documentTableRecord} />
             </tbody>
-          </StyledTable>
+          </Table>
         </VerticalScroll>
       </NavigationLayout>
     </PageHead>
