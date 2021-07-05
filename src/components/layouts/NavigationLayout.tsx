@@ -74,8 +74,8 @@ function Navigation() {
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <HorizontalBorder />
-        <ClientSideLink href="/documents/sending">
-          <FlexContainerColumnCenterCenter selected={asPath === '/documents/sending'}>
+        <ClientSideLink href="/documents/send">
+          <FlexContainerColumnCenterCenter selected={asPath === '/documents/send'}>
             <PaddingCenterH4>Email & 추가입력 정보</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
@@ -94,8 +94,8 @@ function Navigation() {
             <PaddingCenterH4>연관문서 조회</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
-        <ClientSideLink href="/documents/verification">
-          <FlexContainerColumnCenterCenter selected={asPath === '/documents/verification'}>
+        <ClientSideLink href="/documents/verify">
+          <FlexContainerColumnCenterCenter selected={asPath === '/documents/verify'}>
             <PaddingCenterH4>진위검증</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
