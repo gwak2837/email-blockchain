@@ -64,11 +64,11 @@ function Transaction() {
         </td>
         <td>
           <Search
-            placeholder="input search text"
             allowClear
             enterButton="찾아보기"
-            size="large"
             onSearch={() => console.log('트랜잭션 이전 ID 찾아보기')}
+            placeholder="input search text"
+            size="large"
           />
         </td>
       </tr>
