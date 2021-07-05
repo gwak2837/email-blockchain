@@ -1,6 +1,7 @@
 import { UploadOutlined } from '@ant-design/icons'
 import { Button, Input, Modal, Select, Upload } from 'antd'
 import { useState } from 'react'
+import { CenterH2 } from 'src/components/atoms/Styles'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
@@ -84,7 +85,7 @@ function DocumentVerificationPage() {
           <Button size="large">리포트 출력</Button>
         </Modal>
 
-        <h2>문서 변경이력 조회 결과</h2>
+        <CenterH2>진위 검증 결과</CenterH2>
         <Transaction transaction={transaction} />
       </NavigationLayout>
     </PageHead>

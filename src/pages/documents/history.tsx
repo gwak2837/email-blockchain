@@ -1,13 +1,14 @@
 import { Input, Select } from 'antd'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
 import { Table, VerticalScroll } from 'src/components/atoms/Table'
+import { CenterH2 } from 'src/components/atoms/Styles'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
 
 const { Option } = Select
 
-const GridContainerAlignCenter = styled.div`
+export const GridContainerAlignCenter = styled.div`
   display: grid;
   grid-template-columns: 5rem 1fr auto;
   align-items: center;
@@ -18,11 +19,11 @@ const GridContainerAlignCenter = styled.div`
   padding: 1rem;
 `
 
-const searchSelectStyle = {
+export const searchSelectStyle = {
   minWidth: '10rem',
 }
 
-const searchInputStyle = {
+export const searchInputStyle = {
   width: '50%',
   minWidth: '20rem',
 }
@@ -136,8 +137,6 @@ function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
       <td>{document.eventTime.toISOString()}</td>
-      <td>{document.version}</td>
-      <td>{document.previousVersion}</td>
       <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
       </td>
@@ -149,6 +148,7 @@ function DocumentTableRecord({ document }: Props) {
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.title}</td>
+      <td>Transaction</td>
     </tr>
   )
 }
@@ -157,7 +157,7 @@ const description = ''
 
 function DocumentsHistoryPage() {
   return (
-    <PageHead title="이메일 블록체인 - 문서 변경이력 조회" description={description}>
+    <PageHead title="이메일 블록체인 - 히스토리 추적" description={description}>
       <NavigationLayout>
         <GridContainerAlignCenter>
           <h2>Step 1</h2>
@@ -170,19 +170,18 @@ function DocumentsHistoryPage() {
           </Input.Group>
         </GridContainerAlignCenter>
 
-        <h2>문서 변경이력 조회</h2>
+        <CenterH2>히스토리 추적 결과</CenterH2>
         <VerticalScroll>
           <Table>
             <thead>
               <tr>
                 <th>Event Time</th>
-                <th>Version</th>
-                <th>Previous Version</th>
-                <th># of Blocks</th>
-                <th># of Transactions</th>
+                <th># Block</th>
+                <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Title</th>
+                <th>Subject</th>
+                <th>Tx</th>
               </tr>
             </thead>
             <tbody>

@@ -102,7 +102,7 @@ const description = ''
 
 function DocumentsSendingPage() {
   return (
-    <PageHead title="이메일 블록체인 - Email 문서 발신" description={description}>
+    <PageHead title="이메일 블록체인 - Email & 추가입력정보" description={description}>
       <NavigationLayout>
         <Collapse defaultActiveKey={['0']}>
           <Panel header="Email" key="0">

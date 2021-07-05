@@ -76,7 +76,7 @@ function Navigation() {
         <HorizontalBorder />
         <ClientSideLink href="/documents/send">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents/send'}>
-            <PaddingCenterH4>Email & 추가입력 정보</PaddingCenterH4>
+            <PaddingCenterH4>Email & 추가입력정보</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents">
