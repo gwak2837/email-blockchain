@@ -1,6 +1,7 @@
 import { Button, Input, Select } from 'antd'
 import { useState } from 'react'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
+import { CenterH2 } from 'src/components/atoms/Styles'
 import { Table, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
@@ -112,7 +113,7 @@ function RelatingDocumentsPage() {
           ))}
         </GridContainerAlignCenter>
 
-        <h2>연관문서 조회 결과</h2>
+        <CenterH2>연관문서 조회 결과</CenterH2>
         <VerticalScroll>
           <Table>
             <thead>

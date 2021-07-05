@@ -1,13 +1,12 @@
+import { Input, Select } from 'antd'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
+import { CenterH2 } from 'src/components/atoms/Styles'
 import { VerticalScroll, Table } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
-import styled from 'styled-components'
+import { GridContainerAlignCenter, searchSelectStyle, searchInputStyle } from './history'
 
-const FlexContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
+const { Option } = Select
 
 const documentTableRecord = {
   eventTime: new Date(),
@@ -50,11 +49,18 @@ function DocumentsPage() {
   return (
     <PageHead title="이메일 블록체인 - 문서 수발신 목록" description={description}>
       <NavigationLayout>
-        <FlexContainer>
-          <h2>문서 수발신 목록</h2>
-          <input placeholder="Search" />
-          <div>Page 1 / 50</div>
-        </FlexContainer>
+        <GridContainerAlignCenter>
+          <h2>Step 1</h2>
+          <Input.Group compact>
+            <Select defaultValue="Tx ID" size="large" style={searchSelectStyle}>
+              <Option value="Tx ID">Tx ID</Option>
+              <Option value="Block ID">Block ID</Option>
+            </Select>
+            <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
+          </Input.Group>
+        </GridContainerAlignCenter>
+
+        <CenterH2>문서 수발신 목록</CenterH2>
         <VerticalScroll>
           <Table>
             <thead>

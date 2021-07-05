@@ -9,9 +9,9 @@ export const PaddingLeftTd = styled.td`
 `
 
 export const VerticalScroll = styled.div`
-  height: 100%;
+  height: 80%;
   margin: 1rem;
-  overflow: auto;
+  overflow: scroll;
   position: relative;
 `
 
