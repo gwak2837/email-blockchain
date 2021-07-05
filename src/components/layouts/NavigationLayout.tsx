@@ -76,18 +76,17 @@ function Navigation() {
         <HorizontalBorder />
         <ClientSideLink href="/documents/sending">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents/sending'}>
-            <PaddingCenterH4>Email 문서 발신</PaddingCenterH4>
+            <PaddingCenterH4>Email & 추가입력 정보</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents'}>
             <PaddingCenterH4>문서 수발신 목록</PaddingCenterH4>
-            <PaddingCenterH4>(문서관리대장)</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents/history">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents/history'}>
-            <PaddingCenterH4>문서 변경이력 조회</PaddingCenterH4>
+            <PaddingCenterH4>히스토리 추적</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents/relating">
