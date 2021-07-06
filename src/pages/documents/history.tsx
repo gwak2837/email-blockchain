@@ -137,18 +137,14 @@ function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
       <td>{document.eventTime.toISOString()}</td>
+      <td>{document.version}</td>
+      <td>{document.previousVersion}</td>
       <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
-      </td>
-      <td>
-        <ClientSideLink href={`/transactions/${document.transactionId}`}>
-          {document.transactionId}
-        </ClientSideLink>
       </td>
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.title}</td>
-      <td>Transaction</td>
     </tr>
   )
 }
@@ -176,12 +172,13 @@ function DocumentsHistoryPage() {
             <thead>
               <tr>
                 <th>Event Time</th>
-                <th># Block</th>
-                <th># Tx</th>
+                <th>Version</th>
+                <th>Previous Version</th>
+                <th># of Blocks</th>
+                <th># of Transactions</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Subject</th>
-                <th>Tx</th>
+                <th>Title</th>
               </tr>
             </thead>
             <tbody>

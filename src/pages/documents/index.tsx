@@ -8,37 +8,224 @@ import { GridContainerAlignCenter, searchSelectStyle, searchInputStyle } from '.
 
 const { Option } = Select
 
-const documentTableRecord = {
-  eventTime: new Date(),
-  blockId: '1',
-  transactionId: '1',
-  sender: '홍길동',
-  receiver: 'XX건설',
-  title: '누락 및 간섭',
-}
+const documents = [
+  {
+    id: '1',
+    eventTime: '2021.6.15  3:30:20 PM',
+    blockId: '4',
+    transactionId: '1',
+    sender: 'aaa',
+    receiver: 'bbb',
+    subject: '공정표 계획 - 1',
+    transactionHash: '36eb747829f53a5dbf83bd545247a715acece8aaf17b8571bbc4ef5fd811e336',
+  },
+  {
+    id: '2',
+    eventTime: '2021.6.15  3:30:20 PM',
+    blockId: '4',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '3',
+    eventTime: '2021.6.15  3:30:20 PM',
+    blockId: '4',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '4',
+    eventTime: '2021.6.16  2:11:42 PM',
+    blockId: '6',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '5',
+    eventTime: '2021.6.16  2:11:42 PM',
+    blockId: '6',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '6',
+    eventTime: '2021.6.16  2:11:42 PM',
+    blockId: '6',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '7',
+    eventTime: '2021.6.16  2:11:42 PM',
+    blockId: '6',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '8',
+    eventTime: '2021.6.16  3:24:39 PM',
+    blockId: '7',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '9',
+    eventTime: '2021.6.16  3:24:39 PM',
+    blockId: '7',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '10',
+    eventTime: '2021.6.16  3:24:39 PM',
+    blockId: '7',
+    transactionId: '1',
+    sender: 'aaa',
+    receiver: 'bbb',
+    subject: '공정표 계획 - 1',
+    transactionHash: '36eb747829f53a5dbf83bd545247a715acece8aaf17b8571bbc4ef5fd811e336',
+  },
+  {
+    id: '11',
+    eventTime: '2021.6.18  3:31:31 PM',
+    blockId: '11',
+    transactionId: '1',
+    sender: 'aaa',
+    receiver: 'bbb',
+    subject: '공정표 계획 - 1',
+    transactionHash: '36eb747829f53a5dbf83bd545247a715acece8aaf17b8571bbc4ef5fd811e336',
+  },
+  {
+    id: '12',
+    eventTime: '2021.6.18  3:31:31 PM',
+    blockId: '11',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '13',
+    eventTime: '2021.6.18  3:31:31 PM',
+    blockId: '11',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '14',
+    eventTime: '2021.6.18  3:31:31 PM',
+    blockId: '11',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '15',
+    eventTime: '2021.6.18  4:21:59 PM',
+    blockId: '15',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '16',
+    eventTime: '2021.6.18  4:21:59 PM',
+    blockId: '15',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '17',
+    eventTime: '2021.6.18  4:21:59 PM',
+    blockId: '15',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '18',
+    eventTime: '2021.6.18  4:21:59 PM',
+    blockId: '15',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+  {
+    id: '19',
+    eventTime: '2021.6.18  4:21:59 PM',
+    blockId: '15',
+    transactionId: '2',
+    sender: 'bbb',
+    receiver: 'aaa',
+    subject: '건설자재 시험성과표',
+    transactionHash: '9b4a2bc00edb4c6874fb3f784744c10e6b4d95edd6779590219a092b3976e6e9',
+  },
+]
 
 type Props = {
   document: {
-    eventTime: Date
-    transactionId: string
+    id: string
+    eventTime: string
     blockId: string
+    transactionId: string
     sender: string
     receiver: string
-    title: string
+    subject: string
+    transactionHash: string
   }
 }
 
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <td>{document.eventTime.toISOString()}</td>
+      <td>{document.eventTime}</td>
       <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
       </td>
       <td>{document.transactionId}</td>
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
-      <td>{document.title}</td>
+      <td>{document.subject}</td>
+      <td>{document.transactionHash}</td>
     </tr>
   )
 }
@@ -66,25 +253,18 @@ function DocumentsPage() {
             <thead>
               <tr>
                 <th>Event Time</th>
-                <th># of Blocks</th>
-                <th># of Transactions</th>
+                <th># Block</th>
+                <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Email Title</th>
+                <th>Subject</th>
+                <th>Tx ID</th>
               </tr>
             </thead>
             <tbody>
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
-              <DocumentTableRecord document={documentTableRecord} />
+              {documents.map((document) => (
+                <DocumentTableRecord key={document.id} document={document} />
+              ))}
             </tbody>
           </Table>
         </VerticalScroll>
