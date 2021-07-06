@@ -142,6 +142,11 @@ function DocumentTableRecord({ document }: Props) {
       <td>
         <ClientSideLink href={`/blocks/${document.blockId}`}>{document.blockId}</ClientSideLink>
       </td>
+      <td>
+        <ClientSideLink href={`/transactions/${document.transactionId}`}>
+          {document.transactionId}
+        </ClientSideLink>
+      </td>
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.title}</td>
@@ -174,11 +179,11 @@ function DocumentsHistoryPage() {
                 <th>Event Time</th>
                 <th>Version</th>
                 <th>Previous Version</th>
-                <th># of Blocks</th>
-                <th># of Transactions</th>
+                <th># Block</th>
+                <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Title</th>
+                <th>Subject</th>
               </tr>
             </thead>
             <tbody>
