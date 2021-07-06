@@ -119,7 +119,7 @@ function RelatingDocumentsPage() {
             <thead>
               <tr>
                 <th>Event Time</th>
-                <th># of Transactions</th>
+                <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
                 <th>Description</th>
