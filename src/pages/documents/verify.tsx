@@ -77,7 +77,7 @@ function DocumentVerificationPage() {
           </Button>
         </GridContainerAlignCenter>
 
-        <Modal footer={null} onCancel={closeModal} visible={isModalVisible}>
+        <Modal centered footer={null} onCancel={closeModal} visible={isModalVisible}>
           <p>진위 검증 성공</p>
           <Button size="large" type="primary">
             확인
