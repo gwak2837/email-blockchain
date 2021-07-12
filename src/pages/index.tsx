@@ -164,16 +164,6 @@ function HomePage() {
               <Button loading={loading} htmlType="submit" size="large">
                 로그인
               </Button>
-
-              <FlexContainerAroundCenter>
-                <ClientSideLink href="/register">
-                  <Padding>회원가입 페이지</Padding>
-                </ClientSideLink>
-                <Divider type="vertical" />
-                <ClientSideLink href="/find/password">
-                  <Padding>비밀번호 찾기</Padding>
-                </ClientSideLink>
-              </FlexContainerAroundCenter>
             </GridContainerForm>
           </div>
         </FlexContainerCenterCenter>
