@@ -69,19 +69,19 @@ function Navigation() {
       <FlexContainerAroundNav>
         <ClientSideLink href="/">
           <FlexContainerColumnCenterCenter selected={asPath === '/'}>
-            <PaddingCenterH4>블록체인 기반</PaddingCenterH4>
-            <PaddingCenterH4>이메일 문서 관리 시스템</PaddingCenterH4>
+            <PaddingCenterH4>블록체인 기반</PaddingCenterH4>
+            <PaddingCenterH4>이메일 문서 관리 시스템</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <HorizontalBorder />
         <ClientSideLink href="/documents/send">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents/send'}>
-            <PaddingCenterH4>Email & 추가입력정보</PaddingCenterH4>
+            <PaddingCenterH4>Email & 추가입력정보</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents">
           <FlexContainerColumnCenterCenter selected={asPath === '/documents'}>
-            <PaddingCenterH4>문서 수발신 목록</PaddingCenterH4>
+            <PaddingCenterH4>문서 수발신 목록</PaddingCenterH4>
           </FlexContainerColumnCenterCenter>
         </ClientSideLink>
         <ClientSideLink href="/documents/history">
