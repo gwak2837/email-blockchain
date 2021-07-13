@@ -1,8 +1,8 @@
 import { LockTwoTone, UnlockTwoTone } from '@ant-design/icons'
-import { Button, Checkbox, Divider, Input } from 'antd'
+import { Button, Checkbox, Input } from 'antd'
 import { useState, useCallback } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
-import ClientSideLink from 'src/components/atoms/ClientSideLink'
+import Footer from 'src/components/Footer'
 import { sleep } from 'src/utils/commons'
 import styled from 'styled-components'
 import NavigationLayout from '../components/layouts/NavigationLayout'
@@ -33,19 +33,9 @@ const ContinueLoginDiv = styled.div`
   text-align: right;
 `
 
-const FlexContainerAroundCenter = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`
-
 const RedText = styled.h5`
   margin: 0.5rem 0.2rem;
   color: #800000;
-`
-
-const Padding = styled.div`
-  padding: 0.5rem;
 `
 
 const validateEmail = {
@@ -167,6 +157,7 @@ function HomePage() {
             </GridContainerForm>
           </div>
         </FlexContainerCenterCenter>
+        <Footer />
       </NavigationLayout>
     </PageHead>
   )
