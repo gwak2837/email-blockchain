@@ -2,6 +2,7 @@ import { UploadOutlined } from '@ant-design/icons'
 import { Button, Input, Modal, Select, Upload } from 'antd'
 import { useState } from 'react'
 import { CenterH2 } from 'src/components/atoms/Styles'
+import { Table } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
@@ -19,6 +20,26 @@ const GridContainerAlignCenter = styled.div`
   background: #e6eaed;
   border: 2px solid #dcdde6;
   padding: 1rem;
+`
+
+const GridContainerCenterCenter = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+
+  h3 {
+    text-align: center;
+    grid-column: 1 / span 2;
+  }
+`
+
+const VerticalScroll = styled.div`
+  height: 6rem;
+  margin: 2rem 0 0;
+  overflow: scroll;
+  position: relative;
 `
 
 const searchSelectStyle = {
@@ -78,11 +99,33 @@ function DocumentVerificationPage() {
         </GridContainerAlignCenter>
 
         <Modal centered footer={null} onCancel={closeModal} visible={isModalVisible}>
-          <p>진위 검증 성공</p>
-          <Button size="large" type="primary">
-            확인
-          </Button>
-          <Button size="large">리포트 출력</Button>
+          <GridContainerCenterCenter>
+            <h3>진위 검증 성공</h3>
+            <Button block size="large" type="primary">
+              확인
+            </Button>
+            <Button block size="large">
+              리포트 출력
+            </Button>
+          </GridContainerCenterCenter>
+
+          <VerticalScroll>
+            <Table>
+              <thead>
+                <tr />
+              </thead>
+              <tbody>
+                <tr>
+                  <td>진위검증 대상 해시값</td>
+                  <td>a6a6fb07d221eaf60b22544d7cc652d6027bb5749ac1c553bf3d1a47d7a7dba0</td>
+                </tr>
+                <tr>
+                  <td>블록체인 원본 해시값</td>
+                  <td>a6a6fb07d221eaf60b22544d7cc652d6027bb5749ac1c553bf3d1a47d7a7dba0</td>
+                </tr>
+              </tbody>
+            </Table>
+          </VerticalScroll>
         </Modal>
 
         <CenterH2>진위 검증 결과</CenterH2>
