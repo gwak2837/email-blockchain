@@ -6,6 +6,7 @@ import { Collapse, Input, Select } from 'antd'
 const { Panel } = Collapse
 const { Option } = Select
 const { Search } = Input
+const { TextArea } = Input
 
 const searchSelectStyle = {
   width: '100%',
@@ -114,7 +115,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Sender ID</PaddingH4>
                 </td>
                 <td>
-                  <Input size="large" />
+                  <Input allowClear size="large" />
                 </td>
               </tr>
               <tr>
@@ -122,7 +123,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Timestamp</PaddingH4>
                 </td>
                 <td>
-                  <Input size="large" />
+                  <Input allowClear size="large" />
                 </td>
               </tr>
               <tr>
@@ -130,18 +131,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Receiver ID</PaddingH4>
                 </td>
                 <td>
-                  <Input size="large" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <PaddingH4>Content</PaddingH4>
-                </td>
-                <td>
-                  <Select defaultValue="Tx ID" size="large" style={searchSelectStyle}>
-                    <Option value="Tx ID">Tx ID</Option>
-                    <Option value="Block ID">Block ID</Option>
-                  </Select>
+                  <Input allowClear size="large" />
                 </td>
               </tr>
               <tr>
@@ -149,7 +139,15 @@ function DocumentsSendingPage() {
                   <PaddingH4>Subject</PaddingH4>
                 </td>
                 <td>
-                  <Input size="large" />
+                  <Input allowClear size="large" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <PaddingH4>Content</PaddingH4>
+                </td>
+                <td>
+                  <TextArea allowClear size="large" />
                 </td>
               </tr>
             </Table>
