@@ -8,7 +8,7 @@ const { Option } = Select
 const { Search } = Input
 
 const searchSelectStyle = {
-  minWidth: '10rem',
+  width: '100%',
 }
 
 const PaddingH4 = styled.h4`
@@ -16,6 +16,8 @@ const PaddingH4 = styled.h4`
 `
 
 const Table = styled.table`
+  width: 50%;
+
   th,
   td {
     padding: 0.5rem;
@@ -114,6 +116,8 @@ function DocumentsSendingPage() {
                 <td>
                   <Input size="large" />
                 </td>
+              </tr>
+              <tr>
                 <td>
                   <PaddingH4>Timestamp</PaddingH4>
                 </td>
@@ -128,6 +132,8 @@ function DocumentsSendingPage() {
                 <td>
                   <Input size="large" />
                 </td>
+              </tr>
+              <tr>
                 <td>
                   <PaddingH4>Content</PaddingH4>
                 </td>
