@@ -47,10 +47,6 @@ function Transaction({ transaction }: Props) {
         <thead />
         <tbody>
           <tr>
-            <StyledPaddingRightTd>첨부파일 설명</StyledPaddingRightTd>
-            <StyledPaddingLeftTd>{transaction.description}</StyledPaddingLeftTd>
-          </tr>
-          <tr>
             <StyledPaddingRightTd>첨부파일 해시</StyledPaddingRightTd>
             <StyledPaddingLeftTd>{transaction.descriptionHash}</StyledPaddingLeftTd>
           </tr>
@@ -79,7 +75,7 @@ function Transaction({ transaction }: Props) {
             <StyledPaddingLeftTd>{transaction.version}</StyledPaddingLeftTd>
           </tr>
           <tr>
-            <StyledPaddingRightTd>이전 첨부파일 버전</StyledPaddingRightTd>
+            <StyledPaddingRightTd>첨부파일 이전 버전</StyledPaddingRightTd>
             <StyledPaddingLeftTd>{transaction.previousVersion}</StyledPaddingLeftTd>
           </tr>
         </tbody>

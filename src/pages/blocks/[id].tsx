@@ -65,16 +65,16 @@ function BlockPage() {
                 <StyledPaddingLeftTd>{new Date().toISOString()}</StyledPaddingLeftTd>
               </tr>
               <tr>
-                <StyledPaddingRightTd>Email Title</StyledPaddingRightTd>
-                <StyledPaddingLeftTd>ACC FAN MOTOR CABLE ENTRY</StyledPaddingLeftTd>
-              </tr>
-              <tr>
                 <StyledPaddingRightTd>Sender ID</StyledPaddingRightTd>
                 <StyledPaddingLeftTd>OO건설 John Doe</StyledPaddingLeftTd>
               </tr>
               <tr>
                 <StyledPaddingRightTd>Receiver ID</StyledPaddingRightTd>
                 <StyledPaddingLeftTd>OOeng-홍길동</StyledPaddingLeftTd>
+              </tr>
+              <tr>
+                <StyledPaddingRightTd>Subject</StyledPaddingRightTd>
+                <StyledPaddingLeftTd>ACC FAN MOTOR CABLE ENTRY</StyledPaddingLeftTd>
               </tr>
             </tbody>
           </StyledTable>

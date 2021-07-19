@@ -219,7 +219,6 @@ function DocumentTableRecord({ document }: Props) {
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.subject}</td>
-      <td>{document.transactionHash}</td>
     </tr>
   )
 }
@@ -252,7 +251,6 @@ function DocumentsPage() {
                 <th>Sender</th>
                 <th>Receiver</th>
                 <th>Subject</th>
-                <th>Tx ID</th>
               </tr>
             </thead>
             <tbody>

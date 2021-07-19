@@ -60,7 +60,6 @@ function DocumentTableRecord({ document }: Props) {
       </td>
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
-      <td>{document.description}</td>
       <td>{document.keywords}</td>
     </tr>
   )
@@ -83,6 +82,9 @@ function RelatingDocumentsPage() {
             </Select>
             <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
           </Input.Group>
+          <Button size="large" style={{ visibility: 'hidden' }}>
+            + Add
+          </Button>
         </GridContainerAlignCenter>
         <GridContainerAlignCenter>
           <h2>Step 2</h2>
@@ -122,7 +124,6 @@ function RelatingDocumentsPage() {
                 <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Description</th>
                 <th>Keyword</th>
               </tr>
             </thead>

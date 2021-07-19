@@ -149,7 +149,6 @@ function DocumentTableRecord({ document }: Props) {
       </td>
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
-      <td>{document.title}</td>
     </tr>
   )
 }
@@ -183,7 +182,6 @@ function DocumentsHistoryPage() {
                 <th># Tx</th>
                 <th>Sender</th>
                 <th>Receiver</th>
-                <th>Subject</th>
               </tr>
             </thead>
             <tbody>

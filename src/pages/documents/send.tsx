@@ -1,16 +1,11 @@
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
-import { Collapse, Input, Select } from 'antd'
+import { Collapse, Input } from 'antd'
 
 const { Panel } = Collapse
-const { Option } = Select
 const { Search } = Input
 const { TextArea } = Input
-
-const searchSelectStyle = {
-  width: '100%',
-}
 
 const PaddingH4 = styled.h4`
   padding: 0.5rem;
@@ -23,6 +18,9 @@ const Table = styled.table`
   td {
     padding: 0.5rem;
     white-space: nowrap;
+  }
+  input {
+    min-width: 15rem;
   }
 `
 
@@ -120,7 +118,7 @@ function DocumentsSendingPage() {
               </tr>
               <tr>
                 <td>
-                  <PaddingH4>Timestamp</PaddingH4>
+                  <PaddingH4>Receiver ID</PaddingH4>
                 </td>
                 <td>
                   <Input allowClear size="large" />
@@ -128,7 +126,7 @@ function DocumentsSendingPage() {
               </tr>
               <tr>
                 <td>
-                  <PaddingH4>Receiver ID</PaddingH4>
+                  <PaddingH4>Timestamp</PaddingH4>
                 </td>
                 <td>
                   <Input allowClear size="large" />

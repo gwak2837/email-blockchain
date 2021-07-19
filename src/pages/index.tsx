@@ -8,6 +8,13 @@ import styled from 'styled-components'
 import NavigationLayout from '../components/layouts/NavigationLayout'
 import PageHead from '../components/layouts/PageHead'
 
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  height: 100%;
+`
+
 const FlexContainerCenterCenter = styled.div`
   display: flex;
   justify-content: center;
@@ -96,10 +103,10 @@ function HomePage() {
   return (
     <PageHead>
       <NavigationLayout>
-        <FlexContainerCenterCenter>
-          <div>
-            <CenterH1>로그인</CenterH1>
+        <GridContainer>
+          <FlexContainerCenterCenter>
             <GridContainerForm onSubmit={handleSubmit(onSubmit)}>
+              <CenterH1>로그인</CenterH1>
               <label htmlFor="email">
                 <h4>이메일</h4>
                 <Controller
@@ -155,9 +162,9 @@ function HomePage() {
                 로그인
               </Button>
             </GridContainerForm>
-          </div>
-        </FlexContainerCenterCenter>
-        <Footer />
+          </FlexContainerCenterCenter>
+          <Footer />
+        </GridContainer>
       </NavigationLayout>
     </PageHead>
   )
