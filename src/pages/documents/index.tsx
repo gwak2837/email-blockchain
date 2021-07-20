@@ -1,12 +1,21 @@
-import { Input, Select } from 'antd'
+import { Input, Select, Button } from 'antd'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
-import { CenterH2 } from 'src/components/atoms/Styles'
+import { CenterH2, RelativePosition } from 'src/components/atoms/Styles'
 import { VerticalScroll, Table } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
+import { downloadObjectsToCsvFile } from 'src/utils/commons'
+import styled from 'styled-components'
 import { GridContainerAlignCenter, searchSelectStyle, searchInputStyle } from './history'
 
 const { Option } = Select
+
+export const AbsolutePositionRight = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+`
 
 const documents = [
   {
@@ -240,7 +249,18 @@ function DocumentsPage() {
           </Input.Group>
         </GridContainerAlignCenter>
 
-        <CenterH2>문서 수발신 목록</CenterH2>
+        <RelativePosition>
+          <CenterH2>문서 수발신 목록</CenterH2>
+          <AbsolutePositionRight>
+            <Button
+              onClick={() => downloadObjectsToCsvFile(documents, '문서 수발신 목록')}
+              size="large"
+            >
+              문서 추출하기
+            </Button>
+          </AbsolutePositionRight>
+        </RelativePosition>
+
         <VerticalScroll>
           <Table>
             <thead>

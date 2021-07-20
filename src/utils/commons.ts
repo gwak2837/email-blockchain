@@ -41,3 +41,17 @@ export async function digestMessageWithSHA256(message: string) {
 }
 
 export const { ko2en } = new Inko()
+
+export function downloadObjectsToCsvFile(rows: Record<string, unknown>[], filename: string) {
+  const csvMetadata = 'data:text/csv;charset=utf-8,'
+  const columns = Object.keys(rows[0]).join(',') + '\n'
+  const contents = rows.map((row) => Object.values(row).join(',')).join('\n')
+
+  const encodedUri = encodeURI(csvMetadata + columns + contents)
+  const link = document.createElement('a')
+  link.setAttribute('href', encodedUri)
+  link.setAttribute('download', `${filename}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}

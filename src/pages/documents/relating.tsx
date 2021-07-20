@@ -1,11 +1,13 @@
 import { Button, Input, Select } from 'antd'
 import { useState } from 'react'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
-import { CenterH2 } from 'src/components/atoms/Styles'
+import { CenterH2, RelativePosition } from 'src/components/atoms/Styles'
 import { Table, VerticalScroll } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
+import { downloadObjectsToCsvFile } from 'src/utils/commons'
 import styled from 'styled-components'
+import { AbsolutePositionRight } from '.'
 
 const { Option } = Select
 
@@ -115,7 +117,30 @@ function RelatingDocumentsPage() {
           ))}
         </GridContainerAlignCenter>
 
-        <CenterH2>연관문서 조회 결과</CenterH2>
+        <RelativePosition>
+          <CenterH2>연관문서 조회 결과</CenterH2>
+          <AbsolutePositionRight>
+            <Button
+              onClick={() =>
+                downloadObjectsToCsvFile(
+                  [
+                    documentTableRecord,
+                    documentTableRecord,
+                    documentTableRecord,
+                    documentTableRecord,
+                    documentTableRecord,
+                    documentTableRecord,
+                  ],
+                  '연관문서 조회 결과'
+                )
+              }
+              size="large"
+            >
+              문서 추출하기
+            </Button>
+          </AbsolutePositionRight>
+        </RelativePosition>
+
         <VerticalScroll>
           <Table>
             <thead>

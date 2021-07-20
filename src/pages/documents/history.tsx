@@ -1,10 +1,12 @@
-import { Input, Select } from 'antd'
+import { Button, Input, Select } from 'antd'
 import ClientSideLink from 'src/components/atoms/ClientSideLink'
 import { Table, VerticalScroll } from 'src/components/atoms/Table'
-import { CenterH2 } from 'src/components/atoms/Styles'
+import { CenterH2, RelativePosition } from 'src/components/atoms/Styles'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
+import { downloadObjectsToCsvFile } from 'src/utils/commons'
+import { AbsolutePositionRight } from '.'
 
 const { Option } = Select
 
@@ -170,7 +172,18 @@ function DocumentsHistoryPage() {
           </Input.Group>
         </GridContainerAlignCenter>
 
-        <CenterH2>히스토리 추적 결과</CenterH2>
+        <RelativePosition>
+          <CenterH2>히스토리 추적 결과</CenterH2>
+          <AbsolutePositionRight>
+            <Button
+              onClick={() => downloadObjectsToCsvFile(documentTableRecords, '히스토리 추적 결과')}
+              size="large"
+            >
+              문서 추출하기
+            </Button>
+          </AbsolutePositionRight>
+        </RelativePosition>
+
         <VerticalScroll>
           <Table>
             <thead>
