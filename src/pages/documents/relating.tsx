@@ -32,7 +32,7 @@ const searchInputStyle = {
 }
 
 const documentTableRecord = {
-  eventTime: new Date(),
+  eventTime: new Date().toISOString(),
   transactionId: '1',
   sender: '홍길동',
   receiver: 'XX건설',
@@ -42,7 +42,7 @@ const documentTableRecord = {
 
 type Props = {
   document: {
-    eventTime: Date
+    eventTime: string
     transactionId: string
     sender: string
     receiver: string
@@ -54,7 +54,7 @@ type Props = {
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <td>{document.eventTime.toISOString()}</td>
+      <td>{document.eventTime}</td>
       <td>
         <ClientSideLink href={`/transactions/${document.transactionId}`}>
           {document.transactionId}

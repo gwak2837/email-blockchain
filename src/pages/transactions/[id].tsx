@@ -9,8 +9,10 @@ const description = ''
 function TransactionPage() {
   const { query } = useRouter()
 
+  const title = `이메일 블록체인 - 트랜잭션 ${query.id ?? ''}`
+
   return (
-    <PageHead title="이메일 블록체인 - " description={description}>
+    <PageHead title={title} description={description}>
       <NavigationLayout>
         <h2>트랜잭션 상세</h2>
         <Transaction transaction={transaction} />

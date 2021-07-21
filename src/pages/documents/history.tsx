@@ -33,7 +33,7 @@ export const searchInputStyle = {
 const documentTableRecords = [
   {
     id: '1',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '0.1',
     previousVersion: '-',
     blockId: '1',
@@ -44,7 +44,7 @@ const documentTableRecords = [
   },
   {
     id: '2',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '0.2',
     previousVersion: '0.1',
     blockId: '2',
@@ -55,7 +55,7 @@ const documentTableRecords = [
   },
   {
     id: '3',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '0.3',
     previousVersion: '0.2',
     blockId: '3',
@@ -66,7 +66,7 @@ const documentTableRecords = [
   },
   {
     id: '4',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '0.4',
     previousVersion: '0.3',
     blockId: '4',
@@ -77,7 +77,7 @@ const documentTableRecords = [
   },
   {
     id: '5',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '0.5',
     previousVersion: '0.4',
     blockId: '5',
@@ -88,7 +88,7 @@ const documentTableRecords = [
   },
   {
     id: '6',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '1.0',
     previousVersion: '0.2',
     blockId: '6',
@@ -99,7 +99,7 @@ const documentTableRecords = [
   },
   {
     id: '7',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '1.1',
     previousVersion: '1.0',
     blockId: '7',
@@ -110,7 +110,7 @@ const documentTableRecords = [
   },
   {
     id: '8',
-    eventTime: new Date(),
+    eventTime: new Date().toISOString(),
     version: '1.2',
     previousVersion: '1.1',
     blockId: '8',
@@ -124,7 +124,7 @@ const documentTableRecords = [
 type Props = {
   document: {
     id: string
-    eventTime: Date
+    eventTime: string
     version: string
     previousVersion: string
     blockId: string
@@ -138,7 +138,7 @@ type Props = {
 function DocumentTableRecord({ document }: Props) {
   return (
     <tr>
-      <td>{document.eventTime.toISOString()}</td>
+      <td>{document.eventTime}</td>
       <td>{document.version}</td>
       <td>{document.previousVersion}</td>
       <td>
