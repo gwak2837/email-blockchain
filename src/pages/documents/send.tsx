@@ -2,6 +2,7 @@ import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import styled from 'styled-components'
 import { Collapse, Input } from 'antd'
+import { PrimaryButton } from 'src/components/atoms/Button'
 
 const { Panel } = Collapse
 const { Search } = Input
@@ -24,6 +25,12 @@ const Table = styled.table`
   }
 `
 
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+`
+
 function Transaction() {
   return (
     <Table>
@@ -32,7 +39,7 @@ function Transaction() {
           <PaddingH4>첨부파일 암호화</PaddingH4>
         </td>
         <td>
-          <Input size="large" />
+          <Input placeholder="첨부파일 암호화" size="large" />
         </td>
       </tr>
       <tr>
@@ -113,7 +120,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Sender ID</PaddingH4>
                 </td>
                 <td>
-                  <Input allowClear size="large" />
+                  <Input allowClear placeholder="Sender ID" size="large" />
                 </td>
               </tr>
               <tr>
@@ -121,7 +128,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Receiver ID</PaddingH4>
                 </td>
                 <td>
-                  <Input allowClear size="large" />
+                  <Input allowClear placeholder="Sender ID" size="large" />
                 </td>
               </tr>
               <tr>
@@ -129,7 +136,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Timestamp</PaddingH4>
                 </td>
                 <td>
-                  <Input allowClear size="large" />
+                  <Input allowClear placeholder="Sender ID" size="large" />
                 </td>
               </tr>
               <tr>
@@ -137,7 +144,7 @@ function DocumentsSendingPage() {
                   <PaddingH4>Subject</PaddingH4>
                 </td>
                 <td>
-                  <Input allowClear size="large" />
+                  <Input allowClear placeholder="Sender ID" size="large" />
                 </td>
               </tr>
               <tr>
@@ -145,7 +152,15 @@ function DocumentsSendingPage() {
                   <PaddingH4>Content</PaddingH4>
                 </td>
                 <td>
-                  <TextArea allowClear size="large" />
+                  <TextArea allowClear placeholder="Sender ID" size="large" />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <GridContainer>
+                    <PrimaryButton>Verify</PrimaryButton>
+                    <PrimaryButton>Send</PrimaryButton>
+                  </GridContainer>
                 </td>
               </tr>
             </Table>
