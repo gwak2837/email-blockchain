@@ -1,9 +1,5 @@
 import { Button } from 'antd'
-import {
-  BASIC_TEXT_COLOR,
-  PRIMARY_BACKGROUND_COLOR,
-  PRIMARY_TEXT_COLOR,
-} from 'src/models/constants'
+import { PRIMARY_BACKGROUND_COLOR } from 'src/models/constants'
 import styled from 'styled-components'
 
 export const StyledButton = styled(Button)`

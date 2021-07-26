@@ -31,6 +31,13 @@ const GridContainer = styled.div`
   gap: 1rem;
 
   padding: 1rem;
+
+  button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 20rem;
+  }
 `
 
 function Transaction() {
