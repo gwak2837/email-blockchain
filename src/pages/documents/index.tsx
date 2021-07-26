@@ -228,6 +228,12 @@ function DocumentTableRecord({ document }: Props) {
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.subject}</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
     </tr>
   )
 }
@@ -271,6 +277,12 @@ function DocumentsPage() {
                 <th>Sender</th>
                 <th>Receiver</th>
                 <th>Subject</th>
+                <th>문서분류코드</th>
+                <th>연관 키워드</th>
+                <th>트랜잭션 ID</th>
+                <th>트랜잭션 이전 ID</th>
+                <th>첨부파일 버전</th>
+                <th>첨부파일 이전 버전</th>
               </tr>
             </thead>
             <tbody>

@@ -76,6 +76,10 @@ function BlockPage() {
                 <StyledPaddingRightTd>Subject</StyledPaddingRightTd>
                 <StyledPaddingLeftTd>ACC FAN MOTOR CABLE ENTRY</StyledPaddingLeftTd>
               </tr>
+              <tr>
+                <StyledPaddingRightTd>Content</StyledPaddingRightTd>
+                <StyledPaddingLeftTd>.</StyledPaddingLeftTd>
+              </tr>
             </tbody>
           </StyledTable>
         </VerticalScroll50>
