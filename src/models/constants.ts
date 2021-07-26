@@ -12,5 +12,6 @@ export const SECONDARY_COLOR = '#2fccba'
 export const BRIGHT_BACKGROUND_COLOR = '#FCFCFC'
 
 export const BASIC_TEXT_COLOR = '#24130f'
+export const LIGHT_TEXT_COLOR = '#443731'
 
 // export const LIGHT_CHOCO_COLOR = '#C1B1A9'

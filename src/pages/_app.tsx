@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { CHOCO_COLOR, DARK_CHOCO_COLOR } from 'src/models/constants'
+import { BASIC_TEXT_COLOR, LIGHT_TEXT_COLOR } from 'src/models/constants'
 import { createGlobalStyle } from 'styled-components'
 
 import 'normalize.css'
@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     padding: 0;
-    color: ${DARK_CHOCO_COLOR};
+    color: ${BASIC_TEXT_COLOR};
     font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans KR', 'Roboto',
       'Helvetica Neue', sans-serif;
     line-height: normal;
@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
     transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
     :hover {
-      color: ${CHOCO_COLOR}
+      color: ${LIGHT_TEXT_COLOR}
     }
   }
 `
