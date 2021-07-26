@@ -29,6 +29,8 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+
+  padding: 1rem;
 `
 
 function Transaction() {
@@ -155,14 +157,6 @@ function DocumentsSendingPage() {
                   <TextArea allowClear placeholder="Sender ID" size="large" />
                 </td>
               </tr>
-              <tr>
-                <td colSpan={2}>
-                  <GridContainer>
-                    <PrimaryButton>Verify</PrimaryButton>
-                    <PrimaryButton>Send</PrimaryButton>
-                  </GridContainer>
-                </td>
-              </tr>
             </Table>
           </Panel>
           {[1, 2, 3].map((i) => (
@@ -171,6 +165,11 @@ function DocumentsSendingPage() {
             </Panel>
           ))}
         </Collapse>
+
+        <GridContainer>
+          <PrimaryButton>Verify</PrimaryButton>
+          <PrimaryButton>Send</PrimaryButton>
+        </GridContainer>
       </NavigationLayout>
     </PageHead>
   )
