@@ -74,7 +74,11 @@ function DocumentVerificationPage() {
               <Option value="Tx ID">Tx ID</Option>
               <Option value="Block ID">Block ID</Option>
             </Select>
-            <Input.Search placeholder="Search" size="large" style={searchInputStyle} />
+            <Input.Search
+              placeholder="블록체인에 저장된 이벤트 선택"
+              size="large"
+              style={searchInputStyle}
+            />
           </Input.Group>
         </GridContainerAlignCenter>
         <GridContainerAlignCenter>
@@ -86,7 +90,7 @@ function DocumentVerificationPage() {
               <Option value="Tx ID">Tx ID</Option>
               <Option value="Block ID">Block ID</Option>
             </Select>
-            <Input placeholder="Search" size="large" style={searchInputStyle} />
+            <Input placeholder="파일 업로드" size="large" style={searchInputStyle} />
             <Upload>
               <Button icon={<UploadOutlined />} size="large">
                 Upload
