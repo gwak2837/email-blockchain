@@ -1,6 +1,6 @@
 import { UploadOutlined } from '@ant-design/icons'
 import { Input, Upload, Button } from 'antd'
-import { useState } from 'react'
+import { useRef } from 'react'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import { GridContainerAlignCenter } from './documents/history'
@@ -27,8 +27,14 @@ const init = {
 const description = ''
 
 function SendingEmailPage() {
+  const contentRef = useRef('')
+
+  function sendEmail() {
+    console.log(contentRef.current)
+  }
+
   function handleEditorChange(e: any) {
-    console.log(e.target.getContent())
+    contentRef.current = e.target.getContent()
   }
 
   return (
@@ -37,6 +43,9 @@ function SendingEmailPage() {
         <GridContainerAlignCenter>
           <h3>받는 사람</h3>
           <Input placeholder="받는사람" size="large" style={searchInputStyle} />
+          <Button onClick={sendEmail} size="large" type="primary">
+            보내기
+          </Button>
         </GridContainerAlignCenter>
         <GridContainerAlignCenter>
           <h3>참조</h3>
