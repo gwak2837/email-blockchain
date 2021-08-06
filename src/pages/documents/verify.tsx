@@ -8,19 +8,9 @@ import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
 import styled from 'styled-components'
 import { transaction } from 'src/models/dummy-data'
+import { GridContainerAlignCenter } from './history'
 
 const { Option } = Select
-
-const GridContainerAlignCenter = styled.div`
-  display: grid;
-  grid-template-columns: 5rem 1fr auto;
-  align-items: center;
-  gap: 1rem;
-
-  background: #e6eaed;
-  border: 2px solid #dcdde6;
-  padding: 1rem;
-`
 
 const GridContainerCenterCenter = styled.div`
   display: grid;

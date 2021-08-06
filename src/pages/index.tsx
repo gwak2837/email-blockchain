@@ -2,7 +2,9 @@ import { LockTwoTone, UnlockTwoTone } from '@ant-design/icons'
 import { Button, Checkbox, Input } from 'antd'
 import { useState, useCallback } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
+import { PrimaryButton } from 'src/components/atoms/Button'
 import Footer from 'src/components/Footer'
+import useGoToPage from 'src/hooks/useGoToPage'
 import { sleep } from 'src/utils/commons'
 import styled from 'styled-components'
 import NavigationLayout from '../components/layouts/NavigationLayout'
@@ -83,6 +85,8 @@ type LoginFormValues = {
 function HomePage() {
   const [loading, setIsLoading] = useState(false)
 
+  const goToSendingEmailPage = useGoToPage('/send')
+
   const {
     control,
     formState: { errors },
@@ -158,8 +162,11 @@ function HomePage() {
                 />
               </ContinueLoginDiv>
 
-              <Button loading={loading} htmlType="submit" size="large">
+              <PrimaryButton loading={loading} htmlType="submit" size="large">
                 로그인
+              </PrimaryButton>
+              <Button onClick={goToSendingEmailPage} size="large">
+                이메일 보내기
               </Button>
             </GridContainerForm>
           </FlexContainerCenterCenter>
