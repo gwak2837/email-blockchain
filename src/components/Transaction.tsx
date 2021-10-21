@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+
 import ClientSideLink from './atoms/ClientSideLink'
-import { VerticalScroll, PaddingRightTd, PaddingLeftTd, Table } from './atoms/Table'
+import { PaddingLeftTd, PaddingRightTd, Table, VerticalScroll } from './atoms/Table'
 
 const VerticalScroll60 = styled(VerticalScroll)`
   height: 60%;
@@ -17,7 +18,7 @@ const StyledPaddingRightTd = styled(PaddingRightTd)`
   border-width: 0 2px 2px 0;
   border-style: solid;
   border-color: #dcdde6;
-  min-width: 200px;
+  width: 15rem;
 `
 
 const StyledPaddingLeftTd = styled(PaddingLeftTd)`
