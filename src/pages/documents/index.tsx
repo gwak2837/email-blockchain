@@ -214,7 +214,7 @@ type Props = {
   }
 }
 
-function DocumentTableRecord({ document }: any) {
+function DocumentTableRecord({ document }: Record<string, any>) {
   return (
     <tr>
       <td>{document.eventTime}</td>
@@ -229,12 +229,12 @@ function DocumentTableRecord({ document }: any) {
       <td>{document.sender}</td>
       <td>{document.receiver}</td>
       <td>{document.subject}</td>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   )
 }
