@@ -112,11 +112,11 @@ function DocumentVerificationPage() {
               <tbody>
                 <tr>
                   <td>진위검증 대상 해시값</td>
-                  <td>a6a6fb07d221eaf60b22544d7cc652d6027bb5749ac1c553bf3d1a47d7a7dba0</td>
+                  <td>3aa290c77b249d08946a045da1576d5bdc476b9bc11080699089e4c99aa5bbe8</td>
                 </tr>
                 <tr>
                   <td>블록체인 원본 해시값</td>
-                  <td>a6a6fb07d221eaf60b22544d7cc652d6027bb5749ac1c553bf3d1a47d7a7dba0</td>
+                  <td>3aa290c77b249d08946a045da1576d5bdc476b9bc11080699089e4c99aa5bbe8</td>
                 </tr>
               </tbody>
             </Table>
