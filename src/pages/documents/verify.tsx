@@ -6,8 +6,9 @@ import { Table } from 'src/components/atoms/Table'
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
-import styled from 'styled-components'
 import { transaction } from 'src/models/dummy-data'
+import styled from 'styled-components'
+
 import { GridContainerAlignCenter } from './history'
 
 const { Option } = Select
@@ -122,8 +123,8 @@ function DocumentVerificationPage() {
           </VerticalScroll>
         </Modal>
 
-        <CenterH2>진위 검증 결과</CenterH2>
-        <Transaction transaction={transaction} />
+        {/* <CenterH2>진위 검증 결과</CenterH2>
+        <Transaction transaction={transaction} /> */}
       </NavigationLayout>
     </PageHead>
   )
