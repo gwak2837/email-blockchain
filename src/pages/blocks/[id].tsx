@@ -88,6 +88,43 @@ function BlockPage() {
                     <StyledPaddingLeftTd>-</StyledPaddingLeftTd>
                   </tr>
                 </>
+              ) : query.id === '2' ? (
+                <>
+                  <tr>
+                    <StyledPaddingRightTd>Block Number</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>2</StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Previous Block Hash</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>
+                      5c13f35becadd7ec244d61f32907b255bb32d6f8a9c557d78ec7e1c713b4f543
+                    </StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Timestamp</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>{new Date().toISOString()}</StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Sender ID</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>greedycatty@gmail.com</StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Receiver ID</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>adooublea@gmail.com</StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Subject</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>
+                      dfbe6d9a02487bfac6c0a80f36fb213f44b95f17ba3de95827593f045bc0e56d
+                    </StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
+                    <StyledPaddingRightTd>Content</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>
+                      41832be84e812a2cf526e22c46566d477264f5e63fb291c9d17aa0b524e98155
+                    </StyledPaddingLeftTd>
+                  </tr>
+                </>
               ) : (
                 <>
                   <tr>
@@ -133,7 +170,15 @@ function BlockPage() {
         </VerticalScroll50>
 
         <H2>트랜잭션 상세</H2>
-        <Transaction transaction={query.id === '1' ? genesisTransaction : transaction} />
+        <Transaction
+          transaction={
+            query.id === '1'
+              ? genesisTransaction
+              : query.id === '2'
+              ? genesisTransaction
+              : transaction
+          }
+        />
       </NavigationLayout>
     </PageHead>
   )
