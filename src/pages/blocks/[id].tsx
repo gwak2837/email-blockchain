@@ -58,7 +58,7 @@ function BlockPage() {
                   <tr>
                     <StyledPaddingRightTd>Block Hash</StyledPaddingRightTd>
                     <StyledPaddingLeftTd>
-                      582cb96ae5335e18cbec8c0a0045740f43c681e0129c207b07ee31498553eda5
+                      5c13f35becadd7ec244d61f32907b255bb32d6f8a9c557d78ec7e1c713b4f543
                     </StyledPaddingLeftTd>
                   </tr>
                   <tr>
