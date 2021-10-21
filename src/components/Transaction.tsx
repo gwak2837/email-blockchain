@@ -19,6 +19,7 @@ const StyledPaddingRightTd = styled(PaddingRightTd)`
   border-style: solid;
   border-color: #dcdde6;
   width: 15rem;
+  min-width: 15rem;
 `
 
 const StyledPaddingLeftTd = styled(PaddingLeftTd)`

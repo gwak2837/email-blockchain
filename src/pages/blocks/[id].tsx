@@ -3,7 +3,7 @@ import { PaddingLeftTd, PaddingRightTd, Table, VerticalScroll } from 'src/compon
 import NavigationLayout from 'src/components/layouts/NavigationLayout'
 import PageHead from 'src/components/layouts/PageHead'
 import Transaction from 'src/components/Transaction'
-import { transaction } from 'src/models/dummy-data'
+import { genesisTransaction, transaction } from 'src/models/dummy-data'
 import styled from 'styled-components'
 
 const VerticalScroll50 = styled(VerticalScroll)`
@@ -21,6 +21,7 @@ const StyledPaddingRightTd = styled(PaddingRightTd)`
   border-width: 0 2px 2px 0;
   border-style: solid;
   border-color: #dcdde6;
+  width: 15rem;
   min-width: 15rem;
 `
 
@@ -36,17 +37,6 @@ const H2 = styled.h2`
 `
 
 const description = '582cb96ae5335e18cbec8c0a0045740f43c681e0129c207b07ee31498553eda5'
-
-const genesisTransaction = {
-  description: '',
-  descriptionHash: '',
-  code: '',
-  keywords: '',
-  id: '',
-  previousTransactionId: '',
-  version: '',
-  previousVersion: '',
-}
 
 function BlockPage() {
   const { query } = useRouter()
@@ -81,15 +71,15 @@ function BlockPage() {
                   </tr>
                   <tr>
                     <StyledPaddingRightTd>Receiver ID</StyledPaddingRightTd>
-                    <StyledPaddingLeftTd></StyledPaddingLeftTd>
+                    <StyledPaddingLeftTd>-</StyledPaddingLeftTd>
                   </tr>
                   <tr>
                     <StyledPaddingRightTd>Subject</StyledPaddingRightTd>
-                    <StyledPaddingLeftTd></StyledPaddingLeftTd>
+                    <StyledPaddingLeftTd>-</StyledPaddingLeftTd>
                   </tr>
                   <tr>
                     <StyledPaddingRightTd>Content</StyledPaddingRightTd>
-                    <StyledPaddingLeftTd></StyledPaddingLeftTd>
+                    <StyledPaddingLeftTd>-</StyledPaddingLeftTd>
                   </tr>
                 </>
               ) : (
