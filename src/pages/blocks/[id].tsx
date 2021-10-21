@@ -56,6 +56,12 @@ function BlockPage() {
                     <StyledPaddingLeftTd>1</StyledPaddingLeftTd>
                   </tr>
                   <tr>
+                    <StyledPaddingRightTd>Block Hash</StyledPaddingRightTd>
+                    <StyledPaddingLeftTd>
+                      582cb96ae5335e18cbec8c0a0045740f43c681e0129c207b07ee31498553eda5
+                    </StyledPaddingLeftTd>
+                  </tr>
+                  <tr>
                     <StyledPaddingRightTd>Previous Block Hash</StyledPaddingRightTd>
                     <StyledPaddingLeftTd>
                       0000000000000000000000000000000000000000000000000000000000000000
